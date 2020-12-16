@@ -120,5 +120,8 @@
       }
     }
   },
-  "defaultProject": "promises-rxjs"
+  "defaultProject": "promises-rxjs",
+  "cli": {
+    "analytics": "f4358a52-fa06-497e-95b7-50f1efdabc0b"
+  }
 }
