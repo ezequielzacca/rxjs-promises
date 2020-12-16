@@ -1,6 +1,7 @@
 export interface ICustomer {
     id: number;
     name: string;
+    purchases?: IPurchase[];
 }
 
 export interface IPurchase {
@@ -8,6 +9,8 @@ export interface IPurchase {
     quantity: number;
     customerId: number;
     productId: number;
+    customer?: ICustomer;
+    product?: IProduct;
 }
 
 export interface IProduct {
