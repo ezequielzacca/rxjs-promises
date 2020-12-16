@@ -11,6 +11,7 @@
       </tr>
     </thead>
     <tbody>
+      <div *ngIf="loading">loading...</div>
       <tr *ngFor="let purchase of purchases$ | async">
         <td>{{purchase.id}}</td>
         <td>{{purchase.customerId}}</td>
@@ -20,6 +21,7 @@
       </tr>
     </tbody>
   </table>
+  
 </div>
 
 

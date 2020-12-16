@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { finalize } from 'rxjs/operators';
 import { IPurchase } from 'src/interfaces/app.interfaces';
 import { MockApiService } from './mock-api.service';
 
@@ -10,10 +11,15 @@ import { MockApiService } from './mock-api.service';
 })
 export class AppComponent implements OnInit {
   purchases$?: Observable<IPurchase[]>;
+  loading: boolean;
 
   constructor(private mockApi: MockApiService) { }
 
   ngOnInit() {
-    this.purchases$ = this.mockApi.getPurchases();
+    this.loading = true;
+    this.purchases$ = this.mockApi.getPurchases()
+      .pipe(
+        finalize(() => this.loading = false)
+      );
   }
 }
