@@ -5,6 +5,7 @@ export interface ICustomer {
 }
 
 export interface IPurchase {
+    id: number;
     stamp: Date;
     quantity: number;
     customerId: number;
@@ -14,6 +15,7 @@ export interface IPurchase {
 }
 
 export interface IProduct {
+    id: number;
     name: string;
     price: number;
 }
